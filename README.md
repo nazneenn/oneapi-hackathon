@@ -63,6 +63,15 @@ Try after restarting the Jupyter Kernel. Also, note that the notebook is designe
 There is a limit of one running job per user. Check the queue to see if there are any orphaned jobs under your userid. Delete the job with scancel command and try srun again
 5. Running sycl-ls doesnt list any GPU's. <br>
 GPU's are available only on the compute nodes and not in the Head node. Check the bash prompt and verify whether you are on the compute node.
+6. "kernel died" message when using Jupyter Notebook for xpu run.
+find /usr -name libstdc++*
+export LD_PRELOAD=<path to libstdc++>
+for example:
+```
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+```
+
+
 
 
 
